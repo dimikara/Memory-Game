@@ -8,6 +8,11 @@ const cardsContainer = document.querySelector(".deck");
 let openedCards = [];
 let matchedCards = [];
 
+
+//Create the variables needed for the modal
+
+let totalStars, totalTime;
+
 /*
  * Initializing the game, by suffling & creating the list of cards 
  */
@@ -195,7 +200,7 @@ let liveTimer,
     totalSeconds = 0;
 
 // Set the default value to the timer's container
-timerContainer.innerHTML = totalSeconds + 's';
+timerContainer.innerHTML = totalSeconds + ' s';
 
 /*
  * We call this function to start our function, 
@@ -211,7 +216,7 @@ timerContainer.innerHTML = totalSeconds + 's';
         // Increase the totalSeconds by 1
         totalSeconds++;
         // Update the HTML Container with the new time
-        timerContainer.innerHTML = totalSeconds + 's';
+        timerContainer.innerHTML = totalSeconds + ' s';
     }, 1000);
 }
 
@@ -224,9 +229,11 @@ timerContainer.innerHTML = totalSeconds + 's';
  * HINT: That's why I created the `liveTimer` variable, 
  * to store the setInterval's function, so that we can stop it by its name!
  */
+
 function stopTimer() {
     clearInterval(liveTimer);
 }
+
 
 /*
  * Restart Button
@@ -270,7 +277,7 @@ function reset() {
     stopTimer();
     isFirstClick = true;
     totalSeconds = 0;
-    timerContainer.innerHTML = totalSeconds + "s";
+    timerContainer.innerHTML = totalSeconds + " s";
 }
 
 
