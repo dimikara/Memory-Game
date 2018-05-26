@@ -41,7 +41,7 @@ function click(card) {
         if(isFirstClick) {
             // Start our timer
             startTimer();
-            // Change our First Click indicator's value
+            // Change First Click indicator's value
             isFirstClick = false;
         }
         
@@ -96,7 +96,7 @@ function compare(currentCard, previousCard) {
         openedCards = [];
     }
 
-    // Increase the moves indicator
+    // Increase the moves count
     addMove();
 }
 
@@ -124,7 +124,7 @@ function isOver() {
 }
 
 
-// Increase the moves indicator
+// Increase the moves count
 const   movesContainer = document.querySelector(".moves");
 let     moves = 0;
 movesContainer.innerHTML = 0;
@@ -146,7 +146,6 @@ const   starsContainer = document.querySelector(".stars"),
 let     ratingMeter
 
 starsContainer.innerHTML = star + star + star;
-
 
 function rating() {
     if( moves <= 15) {
@@ -194,7 +193,7 @@ function stopTimer() {
 
 
 // Restart Button
-const restartBtn = document.querySelector(".restart");
+const   restartBtn = document.querySelector(".restart");
 
 restartBtn.addEventListener("click", function() {
     // Delete ALL cards
@@ -205,12 +204,10 @@ restartBtn.addEventListener("click", function() {
 
     // Reset the game
     reset();
-
 });
 
 
 // Reset All Game Variables
-
 function reset() {
     // Empty the matchedCards array
     matchedCards = [];

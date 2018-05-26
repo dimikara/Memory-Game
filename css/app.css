@@ -33,8 +33,9 @@ body {
 
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Mina', sans-serif;
     font-weight: 300;
+    text-decoration-color: #4d2600;
 }
 
 
@@ -45,7 +46,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #ffe699 0%, rgb(199, 132, 70) 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -60,7 +61,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
+    background: linear-gradient(160deg, #DB9C62 0%, #4d2600 30%);
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -74,7 +75,7 @@ h1 {
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #92571b;
     cursor: default;
 }
 
@@ -86,7 +87,7 @@ h1 {
 
 .deck .card.match {
     cursor: default;
-    background: #1edfcf;
+    background: #af3309de;
     font-size: 40px;
 }
 
