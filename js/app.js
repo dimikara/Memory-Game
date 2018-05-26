@@ -1,23 +1,18 @@
-/*
- * Create a list that holds all of your cards
- */
-const icons = ["fa fa-github", "fa fa-github", "fa fa-slack", "fa fa-slack", "fa fa-codepen", "fa fa-codepen", "fa fa-at", "fa fa-at", "fa fa-google-plus", "fa fa-google-plus", "fa fa-dropbox", "fa fa-dropbox", "fa fa-html5", "fa fa-html5", "fa fa-usb", "fa fa-usb"];
-
-const cardsContainer = document.querySelector(".deck");
-
-let openedCards = [];
-let matchedCards = [];
+// Create a list to hold all the cards
+const   icons = ["fa fa-github", "fa fa-github", "fa fa-slack", "fa fa-slack", "fa fa-codepen", "fa fa-codepen", "fa fa-at", "fa fa-at", "fa fa-google-plus", "fa fa-google-plus", "fa fa-dropbox", "fa fa-dropbox", "fa fa-html5", "fa fa-html5", "fa fa-usb", "fa fa-usb"];
+const   cardsContainer = document.querySelector(".deck");
+let     openedCards = [];
+let     matchedCards = [];
 
 
-//Create the variables needed for the modal
-
+// Create the variables needed for the modal
 let totalStars, totalTime;
 
-/*
- * Initializing the game, by suffling & creating the list of cards 
- */
+
+// Initializing the game, by suffling & creating the list of cards 
 function init() {
-    const icons2 = shuffle(icons);
+    const   icons2 = shuffle(icons);
+    
     for(let i = 0; i < icons.length; i++) {
         const card = document.createElement("li");
         card.classList.add("card");
@@ -30,9 +25,7 @@ function init() {
 }
 
 
-/*
- * Click Event
- */
+// Click Event
 
 // First Click Indicator
 let isFirstClick = true;
@@ -43,16 +36,8 @@ function click(card) {
     // Card Click Event
     card.addEventListener("click", function() {
 
-        /*
-        * At the first click, the condition will be true,
-        * and our code below will get executed!
-        * 
-        * We will call our `startTimer` function,
-        * Then, set the `isFirstClick` to `false`, so in the next click,
-        * it will be `if(false)` and nothing will happen, as we don't have an `else`!
-        * 
-        * THAT'S EXACTLY what we want!
-        */
+        // After the first click, the variable `isFirstClick` remains false until the end of the game.
+        // Absence of an `else`, as the `isFirstClick` variable should remain false.
         if(isFirstClick) {
             // Start our timer
             startTimer();
@@ -60,20 +45,20 @@ function click(card) {
             isFirstClick = false;
         }
         
-        const currentCard = this;
-        const previousCard = openedCards[0];
+        const   currentCard = this;
+        const   previousCard = openedCards[0];
 
-        // We have an existing OPENED card
+        // One existing open card
         if(openedCards.length === 1) {
 
             card.classList.add("open", "show", "disable");
             openedCards.push(this);
 
-            // We should compare our 2 opened cards!
+            // Compare the 2 open cards
             compare(currentCard, previousCard);
 
         } else {
-        // We don't have any opened cards
+        // No open cards
             currentCard.classList.add("open", "show", "disable");
             openedCards.push(this);
         }
@@ -82,51 +67,45 @@ function click(card) {
 }
 
 
-/*
- * Compare the 2 cards
- */
+// Compare two open cards
 function compare(currentCard, previousCard) {
 
-    // Matcher
+    // Matching condition
     if(currentCard.innerHTML === previousCard.innerHTML) {
                 
-        // Matched
+        // Match
         currentCard.classList.add("match");
         previousCard.classList.add("match");
 
+        // The matched pair is pushed to the matchedCards array
         matchedCards.push(currentCard, previousCard);
 
         openedCards = [];
 
-        // Check if the game is over!
+        // Check if the game is over
         isOver();
 
     } else {
         
-        /* The two cards are turned with the face down, not immediately but after 500ms.
-        *  I also tried 750ms, but in this case it was possible for the player to have three cards open
-        *  at the same time if they clicked quickly.
-        */
+        // The two cards are turned with the face down after 500ms i.e. 0.5sec.
         setTimeout(function() {
             currentCard.classList.remove("open", "show", "disable");
             previousCard.classList.remove("open", "show", "disable");
         }, 500);
 
         openedCards = [];
-        
     }
 
-    // Add New Move
+    // Increase the moves indicator
     addMove();
 }
 
-/*
- * Check if the game is over!
- */
+
+// Check if the game is over
 function isOver() {
     if(matchedCards.length === icons.length) {
 
-        // Stop our timer
+        // Stop the timer
         stopTimer();
 
         /*
@@ -145,11 +124,9 @@ function isOver() {
 }
 
 
-/*
- * Add move
- */
-const movesContainer = document.querySelector(".moves");
-let moves = 0;
+// Increase the moves indicator
+const   movesContainer = document.querySelector(".moves");
+let     moves = 0;
 movesContainer.innerHTML = 0;
 
 function addMove() {
@@ -160,9 +137,8 @@ function addMove() {
     rating();
 }
 
-/*
- * Rating
- */
+
+// Rating
 const   starsContainer = document.querySelector(".stars"), 
         star = `<li><i class="fa fa-star"></i></li>`,
         starHalf = `<li><i class="fa fa-star-half-empty"></i></li>`,
@@ -173,16 +149,16 @@ starsContainer.innerHTML = star + star + star;
 
 
 function rating() {
-    if( moves <= 10) {
+    if( moves <= 15) {
         starsContainer.innerHTML = star + star + star;
         ratingMeter = star + star + star;
-    } else if(moves > 10 && moves < 15) {
+    } else if(moves > 15 && moves < 25) {
         starsContainer.innerHTML = star + star + starHalf;
         ratingMeter = star + star;
-    } else if(moves === 15) {
+    } else if(moves === 25) {
         starsContainer.innerHTML = star + star + starWhite;
         ratingMeter = star + star;
-    } else if(moves > 15 && moves < 20) {
+    } else if(moves > 25 && moves < 30) {
         starsContainer.innerHTML = star + starHalf + starWhite;
         ratingMeter = star;
     } else {
@@ -192,58 +168,39 @@ function rating() {
 }
 
 
-/*
- * Timer
- */
-const timerContainer = document.querySelector(".timer");
-let liveTimer,
-    totalSeconds = 0;
+// Timer
+const   timerContainer = document.querySelector(".timer");
+let     liveTimer,
+        totalSeconds = 0;
 
 // Set the default value to the timer's container
 timerContainer.innerHTML = totalSeconds + ' s';
 
-/*
- * We call this function to start our function, 
- * the totalSeconds will be increased 
- * by 1 after 1000ms (1 second!)
- * 
- * HINT: We need to call this function ONCE, and the best time to call it
- * is when the user click on a card (The first card!)
- * This means that our user is start playing now! ;)
- */
- function startTimer() {
+// Starting the timer as soon as the user clicks on their first card
+function startTimer() {
     liveTimer = setInterval(function() {
-        // Increase the totalSeconds by 1
+        // Increase the totalSeconds
         totalSeconds++;
-        // Update the HTML Container with the new time
+        // Update the HTML Container with the new value of time
         timerContainer.innerHTML = totalSeconds + ' s';
     }, 1000);
 }
 
 
-/*
- * Our timer won't stop. To stop it, we should clearInterval!
- * We will call it when the game is over.
- * So, we will call it at the end of `isOver` function
- * 
- * HINT: That's why I created the `liveTimer` variable, 
- * to store the setInterval's function, so that we can stop it by its name!
- */
-
+// Stopping the timer - is called when the game is over
 function stopTimer() {
     clearInterval(liveTimer);
 }
 
 
-/*
- * Restart Button
- */
+// Restart Button
 const restartBtn = document.querySelector(".restart");
+
 restartBtn.addEventListener("click", function() {
     // Delete ALL cards
     cardsContainer.innerHTML = "";
 
-    // Call `init` to create new cards
+    // Call `init` to initialize the game
     init();
 
     // Reset the game
@@ -252,28 +209,21 @@ restartBtn.addEventListener("click", function() {
 });
 
 
-/*
- * Reset All Game Variables
- */
+// Reset All Game Variables
+
 function reset() {
-    // Empty the `matchedCards` array
+    // Empty the matchedCards array
     matchedCards = [];
 
-    // Reset `moves`
+    // Reset moves to 0
     moves = 0;
     movesContainer.innerHTML = moves;
 
-    // Reset `rating`
+    // Reset rating to three stars
     starsContainer.innerHTML = star + star + star;
 
-    /*
-     * Reset the `timer`
-     * 
-     * - Stop it first
-     * - Then, reset the `isFirstClick` to `true` to be able to start the timer again!
-     * - Don't forget about `totalSeconds`, it must be `0`
-     * - One more thing, is to update the HTML timer's container
-     */
+    // Reset the timer
+    // `isFirstClick` has to be reverted back to `true` to be able to start the timer again
     stopTimer();
     isFirstClick = true;
     totalSeconds = 0;
@@ -281,7 +231,7 @@ function reset() {
 }
 
 
-/////// Start the game for the first time!
+// Start the game for the first time!
 init();
 
 
