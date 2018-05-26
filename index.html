@@ -19,6 +19,40 @@
             <h1>Memory Game</h1>
         </header>
 
+        <section class="instructions-modal">
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">How to Play</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>How to Play</h2>
+                    <h3>How The Game Works</h3>
+                        <p>The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!</p>
+                        
+                        <p>Each turn:</p>
+                        
+                        <p>- The player flips one card over to reveal its underlying symbol.</p>
+                        
+                        <p>- The player then turns over a second card, trying to find the corresponding card with the same symbol.</p>
+                        
+                        <p>- If the cards match, both cards stay flipped over. If the cards do not match, both cards are flipped face down.</p>
+                        
+                        <p>- The game ends once all cards have been correctly matched.</p>
+                        
+                        <h3>Rating</h3>
+                        <p>0 - 15 moves : Three stars</p>
+                        <p>16 - 25 moves : Two stars</p>
+                        <p>20+ : One star</p>
+                        <p></p>
+                </div>
+
+            </div>
+        </section>
+        
         <section class="score-panel">
         	<ul class="stars">
         		<li><i class="fa fa-star"></i></li>
@@ -34,7 +68,7 @@
                 <i class="fa fa-repeat"></i>   Start Over / Resuffle
             </div>
         
-            <!-- The Modal -->
+            <!-- The End Modal -->
             <div id="myModal" class="modal">
 
                 <!-- Modal content -->
