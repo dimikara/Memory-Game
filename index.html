@@ -22,6 +22,7 @@
         <section class="instructions-modal">
             <!-- Trigger/Open The Modal -->
             <button id="myBtn">How to Play</button>
+            <p></p>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -35,18 +36,17 @@
                         
                         <p>Each turn:</p>
                         
-                        <p>- The player flips one card over to reveal its underlying symbol.</p>
-                        
-                        <p>- The player then turns over a second card, trying to find the corresponding card with the same symbol.</p>
-                        
-                        <p>- If the cards match, both cards stay flipped over. If the cards do not match, both cards are flipped face down.</p>
-                        
-                        <p>- The game ends once all cards have been correctly matched.</p>
+                        <ul class="explanations">
+                        <li>The player flips one card over to reveal its underlying symbol.</li>
+                        <li>The player then turns over a second card, trying to find the corresponding card with the same symbol.</li>
+                        <li>If the cards match, both cards stay flipped over. If the cards do not match, both cards are flipped face down.</li>
+                        <li>The game ends once all cards have been correctly matched.</li>
+                        </ul>
                         
                         <h3>Rating</h3>
                         <p>0 - 15 moves : Three stars</p>
-                        <p>16 - 25 moves : Two stars</p>
-                        <p>20+ : One star</p>
+                        <p>16 - 23 moves : Two stars</p>
+                        <p>24+ : One star</p>
                         <p></p>
                 </div>
 
@@ -84,6 +84,7 @@
 
     
     <script src="js/app.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     
 </body>
 </html>

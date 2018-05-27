@@ -138,17 +138,16 @@ function isOver() {
         // Stop the timer
         stopTimer();
 
-        /*
-         * Display your popup here, the `alert` is for explanation only!
-         * 
-         * In your popup, you should create a button, 
-         * To let the user play a new game
-         * 
-         * After clicking on that button, you should:
-         *  - Call the `init` function to re-create the cards
-         *  - Call the `reset` function to reset all variables
-         */
-        alert("GAME OVER!");
+        // Use of sweetalert for the congratulations pop-up (https://sweetalert.js.org/guides/)
+        let finalLine = "Rating: " + ratingMeter + " Elapsed time: " + 
+            totalSeconds + " seconds. Moves: " + moves;
+
+        swal({
+            title: "Congratulations! You won!", 
+            text: finalLine, 
+            icon: "success", 
+            buttons: ["Thank you, but not my cup of tea", "Of course!"]}
+        );
         
     }
 }
@@ -173,26 +172,31 @@ const   starsContainer = document.querySelector(".stars"),
         star = `<li><i class="fa fa-star"></i></li>`,
         starHalf = `<li><i class="fa fa-star-half-empty"></i></li>`,
         starWhite = `<li><i class="fa fa-star-o"></i></li>`;
-let     ratingMeter
+let     ratingMeter;
 
 starsContainer.innerHTML = star + star + star;
 
 function rating() {
+    // I liked the idea to have a progressive decrease of stars hence the use of half & white stars.
     if( moves <= 15) {
         starsContainer.innerHTML = star + star + star;
-        ratingMeter = star + star + star;
-    } else if(moves > 15 && moves < 25) {
+    } else if(moves > 15 && moves < 23) {
         starsContainer.innerHTML = star + star + starHalf;
-        ratingMeter = star + star;
-    } else if(moves === 25) {
+    } else if(moves === 23) {
         starsContainer.innerHTML = star + star + starWhite;
-        ratingMeter = star + star;
-    } else if(moves > 25 && moves < 30) {
+    } else if(moves > 23 && moves < 30) {
         starsContainer.innerHTML = star + starHalf + starWhite;
-        ratingMeter = star;
     } else {
         starsContainer.innerHTML = star + starWhite + starWhite;
-        ratingMeter = star;
+    }
+
+    // Get the final rating according to moves. Only full stars count.
+    if( moves <= 15) {
+        ratingMeter = "Three stars (Excellent!) ";
+    } else if(moves >= 16 && moves <= 23) {
+        ratingMeter = "Two stars (Very Good!) ";
+    } else {
+        ratingMeter = "One star (Not bad but you can do better!) ";
     }
 }
 
@@ -203,7 +207,7 @@ let     liveTimer,
         totalSeconds = 0;
 
 // Set the default value to the timer's container
-timerContainer.innerHTML = totalSeconds + ' s';
+timerContainer.innerHTML = totalSeconds + ' s   ';
 
 // Starting the timer as soon as the user clicks on their first card
 function startTimer() {
@@ -211,7 +215,7 @@ function startTimer() {
         // Increase the totalSeconds
         totalSeconds++;
         // Update the HTML Container with the new value of time
-        timerContainer.innerHTML = totalSeconds + ' s';
+        timerContainer.innerHTML = totalSeconds + ' s  ';
     }, 1000);
 }
 
@@ -226,6 +230,12 @@ function stopTimer() {
 const   restartBtn = document.querySelector(".restart");
 
 restartBtn.addEventListener("click", function() {
+    restart();
+});
+
+
+// Restart Function
+function restart() {
     // Delete ALL cards
     cardsContainer.innerHTML = "";
 
@@ -234,7 +244,7 @@ restartBtn.addEventListener("click", function() {
 
     // Reset the game
     reset();
-});
+};
 
 
 // Reset All Game Variables
