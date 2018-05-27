@@ -217,3 +217,32 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
+
+
+/*
+ * Responsiveness
+*/
+
+@media only screen and (max-width: 600px) {
+    .score-panel {
+        width: 90%;
+    }
+
+    .deck {
+        width: 95%;
+        padding: 13px;
+        min-height: 100vw;
+    }
+
+    .deck .card {
+        width: 19vw;
+        height: 19vw;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .score-panel {
+        font-size: 20px;
+    }
+}
