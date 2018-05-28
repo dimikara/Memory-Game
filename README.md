@@ -36,6 +36,8 @@ The goal of the game is to match all the cards in the least moves & time possibl
 24+ : One star
 
 To read the instructions in the game, press the "How to play" button.
+
+You can **play the game** here: https://dimikara.github.io/Memory-Game/.
 ___
 ## Technologies
 
@@ -61,8 +63,6 @@ ___
 
 ## Credits
 
-The webinar with Yahya Elharony during FEND Study Jam was pretty helpful for me to understand the dynamics & structure of the game.
-
-I was able to build the base and then move up from there.
+The webinar with Yahya Elharony during FEND Study Jam was pretty helpful for me to understand the dynamics & structure of the game. I was able to build the base and then move up from there.
 
 For more info on Sweetalert2 & how it is used, see: https://sweetalert2.github.io/
