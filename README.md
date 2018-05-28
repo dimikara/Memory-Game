@@ -41,6 +41,10 @@ HTML, CSS, & Javascript
 
 ## Screenshots
 
-![Screenshot1](/img/Screenshot.jpg)
+* The game on PC
 
-![Screenshot2](/img/ScreenshotGalaxyS.jpg)
+![Screenshot1](/img/Screenshot.jpg "The game on PC")
+
+* The game on mobile
+
+![Screenshot2](/img/ScreenshotGalaxyS.jpg "The game on mobile")
