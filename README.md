@@ -24,14 +24,15 @@ If the cards do not match, both cards are flipped face down.
 
 The game ends once all cards have been correctly matched. 
 
+The goal of the game is to match all the cards in the least moves & time possible. 
 
 * Rating
 
-0 - 15 moves  : Three stars
+0 - 15 moves : Three stars
 
 16 - 23 moves : Two stars
 
-24+           : One star
+24+ : One star
 
 
 ## Technologies
