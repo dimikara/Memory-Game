@@ -140,17 +140,24 @@ function isOver() {
 
         // Use of sweetalert for the congratulations pop-up (https://sweetalert.js.org/guides/)
         let finalLine = "Rating: " + ratingMeter + " Elapsed time: " + 
-            totalSeconds + " seconds. Moves: " + moves;
+            totalSeconds + " seconds. Moves: " + moves + ". Do you want to play again?";
 
-        swal({
-            title: "Congratulations! You won!", 
-            text: finalLine, 
-            icon: "success", 
-            buttons: ["Thank you, but not my cup of tea", "Of course!"]}
-        );
-        
-    }
-}
+            swal({
+                position: "top",
+                title: "Congratulations! You won!",
+                text: finalLine,
+                type: "success",
+                showCancelButton: true,
+                cancelButtonText: "Nope",
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: "Of course!"
+              }).then((result) => {
+                if (result.value) {
+                    restart();
+                }
+              })        
+}}
 
 
 // Increase the moves count

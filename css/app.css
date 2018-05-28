@@ -140,7 +140,7 @@ h1 {
   }
 
 
-  .swal-text {
+  .swal-content {
     background-color: #ffe699;
     padding: 17px;
     border: 1px solid #DB9C62;
@@ -149,6 +149,7 @@ h1 {
     text-align: center;
     color: #61534e;
   }
+
 
 
 /* 
@@ -218,10 +219,8 @@ h1 {
     cursor: pointer;
 }
 
-
 /*
  * Responsiveness
-*/
 
 @media only screen and (max-width: 600px) {
     .score-panel {
@@ -246,3 +245,5 @@ h1 {
         font-size: 20px;
     }
 }
+
+*/
