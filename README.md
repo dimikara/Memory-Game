@@ -41,3 +41,4 @@ HTML, CSS, & Javascript
 
 ## Screenshots
 
+![Screenshot1](dimikara.github.com/Memory-Game/img/Screenshot.jpg)
