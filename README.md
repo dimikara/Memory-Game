@@ -41,4 +41,6 @@ HTML, CSS, & Javascript
 
 ## Screenshots
 
-![Screenshot1](dimikara.github.com/Memory-Game/img/Screenshot.jpg)
+![Screenshot1](/img/Screenshot.jpg)
+
+![Screenshot2](/img/ScreenshotGalaxyS.jpg)
