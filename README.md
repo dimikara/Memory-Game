@@ -6,6 +6,7 @@
 * [Technologies](#technologies)
 * [Screenshots](#screenshots)
 * [Credits](#credits)
+* [License](#license)
 
 
 ## Instructions
@@ -63,6 +64,18 @@ ___
 
 ## Credits
 
-The webinar with Yahya Elharony during FEND Study Jam was pretty helpful for me to understand the dynamics & structure of the game. I was able to build the base and then move up from there.
+* The webinar with Yahya Elharony during FEND Study Jam was pretty helpful for me to understand the dynamics & structure of the game. I was able to build the base and then move up from there.
 
-For more info on Sweetalert2 & how it is used, see: https://sweetalert2.github.io/
+* For more info on Sweetalert2 & how it is used, see: https://sweetalert2.github.io/
+
+* Font: [Mina](https://fonts.googleapis.com/css?family=Mina) 
+
+* Icons: [Font Awesome Icons](https://fontawesome.com/v4.7.0/icons/)
+
+___
+
+## License
+
+[MIT](https://github.com/dimikara/Memory-Game/blob/master/LICENSE.md) License.
+
+Copyright (c) 2018 Dimitra Karamperi
