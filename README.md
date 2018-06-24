@@ -60,6 +60,10 @@ ___
 
 ![Screenshot3](/img/ScreenshotGalaxyS.png "The game on mobile")
 
+* The end modal
+
+![Screenshot4](/img/End_Modal "The end modal")
+
 ___
 
 ## Credits
