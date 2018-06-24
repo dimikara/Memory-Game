@@ -62,7 +62,7 @@ ___
 
 * The end modal
 
-![Screenshot4](/img/End_Modal "The end modal")
+![Screenshot4](/img/End_Modal.png "The end modal")
 
 ___
 
