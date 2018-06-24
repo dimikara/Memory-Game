@@ -140,7 +140,7 @@ function isOver() {
 
         // Use of sweetalert for the congratulations pop-up (https://sweetalert.js.org/guides/)
         let finalLine = "Rating: " + ratingMeter + " Elapsed time: " + 
-            totalSeconds + " seconds. Moves: " + moves + ". Do you want to play again?";
+            totalSeconds + " seconds. Moves: " + (moves+1) + ". Do you want to play again?";
 
             swal({
                 position: "top",
